@@ -1,10 +1,10 @@
-# 🎵 Song Preview Mixer
+# Song Preview Mixer
 
 A simple tool to crop song previews and seamlessly mix them in sequence from a bundle of tracks.
 
 ---
 
-## 📦 Prerequisites
+## Prerequisites
 
 Make sure you have the following installed:
 
@@ -19,7 +19,7 @@ pip install librosa pydub numpy
 
 ---
 
-## 🚀 Usage
+## Usage
 
 1. Place your audio files (`.mp3`) inside the `input` folder
 2. Rename them in order:
@@ -40,11 +40,11 @@ python app.py
    output/final_output.mp3
    ```
 
-💡 Tip: Experiment with the configuration values to get your perfect mix.
+Tip: Experiment with the configuration values to get your perfect mix.
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 | Variable             | Value                | Description                                   |
 | -------------------- | -------------------- | --------------------------------------------- |
