@@ -1,37 +1,79 @@
-# Song Preview Mixer
-For cropping song preview and mix it in order with other songs in bundle
+# 🎵 Song Preview Mixer
 
+A simple tool to crop song previews and seamlessly mix them in sequence from a bundle of tracks.
 
-# Prerequisites
-Python 3.14.3
-ffmpeg
+---
 
-- before starting run this command
+## 📦 Prerequisites
 
-> pip install librosa pydub numpy
+Make sure you have the following installed:
 
-- put the desired audio (.mp3) into `input` folder
-- name it 1, 2, 3, 4 ... .mp3
-- other format like (.ogg) is possible with change on the code which currently using mp3
-- run this command
+* **Python 3.14.3**
+* **ffmpeg**
 
-> python app.py
+Install required Python packages:
 
-- the result will be generated in `output` folder under the name final_output.mp3
-- play with the config to results your best version of the mix
+```bash
+pip install librosa pydub numpy
+```
 
+---
 
-# Configuration
-| Variable             | Value       | Description                                      |
-|----------------------|-------------|--------------------------------------------------|
-| INPUT_FOLDER         | "input"     | Folder with original MP3s                        |
-| OUTPUT_FOLDER        | "output"    | Folder for final output                          |
-| OUTPUT_FILE          | "final_output.mp3" | Final output file name                    |
-| PRE_OFFSET           | 2           | Seconds before peak                              |
-| MIN_CLIP             | 7           | Minimum clip length in seconds                   |
-| MAX_CLIP             | 26          | Maximum clip length per clip                     |
-| DROP_THRESHOLD       | 0.3         | Stop when intensity drops below this fraction    |
-| FADE_IN_MS           | 200         | Fade-in per clip (milliseconds)                  |
-| FADE_OUT_MS          | 300         | Fade-out per clip (milliseconds)                 |
-| CROSSFADE_MS         | 500         | Crossfade between clips (milliseconds)           |
-| FINAL_MAX_DURATION   | 26000       | Max final output length (milliseconds)           |
+## 🚀 Usage
+
+1. Place your audio files (`.mp3`) inside the `input` folder
+2. Rename them in order:
+
+   ```
+   1.mp3, 2.mp3, 3.mp3, ...
+   ```
+3. (Optional) You can use other formats like `.ogg` by adjusting the code accordingly
+4. Run the script:
+
+```bash
+python app.py
+```
+
+5. The final mixed output will be generated in the `output` folder:
+
+   ```
+   output/final_output.mp3
+   ```
+
+💡 Tip: Experiment with the configuration values to get your perfect mix.
+
+---
+
+## ⚙️ Configuration
+
+| Variable             | Value                | Description                                   |
+| -------------------- | -------------------- | --------------------------------------------- |
+| `INPUT_FOLDER`       | `"input"`            | Folder containing original audio files        |
+| `OUTPUT_FOLDER`      | `"output"`           | Folder where output will be saved             |
+| `OUTPUT_FILE`        | `"final_output.mp3"` | Name of the final output file                 |
+| `PRE_OFFSET`         | `2`                  | Seconds before peak                           |
+| `MIN_CLIP`           | `7`                  | Minimum clip length (seconds)                 |
+| `MAX_CLIP`           | `26`                 | Maximum clip length per clip (seconds)        |
+| `DROP_THRESHOLD`     | `0.3`                | Stop when intensity drops below this fraction |
+| `FADE_IN_MS`         | `200`                | Fade-in duration per clip (ms)                |
+| `FADE_OUT_MS`        | `300`                | Fade-out duration per clip (ms)               |
+| `CROSSFADE_MS`       | `500`                | Crossfade duration between clips (ms)         |
+| `FINAL_MAX_DURATION` | `26000`              | Maximum total output length (ms)              |
+
+---
+
+## 📝 Notes
+
+* Ensure filenames are strictly ordered for correct sequencing
+* Works best with consistent audio formats and quality
+* Requires `ffmpeg` to be properly installed and accessible in your system path
+
+---
+
+## 🎧 Output
+
+The final mixed preview will:
+
+* Combine all clips in order
+* Apply fades and crossfades
+* Respect the maximum duration limit
