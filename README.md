@@ -65,7 +65,7 @@ Tip: Experiment with the configuration values to get your perfect mix.
 ## 📝 Notes
 
 * Ensure filenames are strictly ordered for correct sequencing
-* Works best with consistent audio formats and quality
+* Works on .mp3 and/or .ogg audio file
 * Requires `ffmpeg` to be properly installed and accessible in your system path
 
 ---
